@@ -1,0 +1,30 @@
+@use "@styles/_mixins.module.scss" as *;
+@use "@styles/_variables.module.scss" as *;
+
+.container {
+  @include flex_box_custom(center, center, 0px);
+
+  background-image: url(../../assets/images/Banner_2.jpg);
+  min-height: 580px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.content {
+  @include flex_box_custom(center, center, 10px);
+
+  flex-direction: column;
+}
+
+.title {
+  font-size: 42px;
+  color: $white_color;
+  font-weight: 400;
+  margin: 15px;
+}
+
+.des {
+  color: $four_color;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
