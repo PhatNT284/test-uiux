@@ -1,0 +1,14 @@
+@use "@styles/_variables.module.scss" as *;
+@use "@styles/_mixins.module.scss" as *;
+
+.box {
+  background-color: white;
+  padding: 7px;
+  border-radius: 4px;
+  margin-top: 235px;
+}
+
+.title {
+  font-size: 18px;
+  color: $secondary_color;
+}

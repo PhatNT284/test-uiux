@@ -1,0 +1,26 @@
+@use "@styles/_variables.module.scss" as *;
+@use "@styles/_mixins.module.scss" as *;
+
+.container {
+  background-image: url("https://media.istockphoto.com/id/1292715135/vi/anh/s%C3%BAp-vi%E1%BB%87t-nam-ph%E1%BB%9F-h%E1%BB%93-s%C3%BAp-rau-c%E1%BB%A7.jpg?s=612x612&w=0&k=20&c=KTOaH1znLAGYn4-yc5PSOjgseK60JuRdVewYH5gTfYA=");
+  height: 409px;
+  width: calc(100% / 2);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.containerTimmer {
+  @include flex_box_custom(center, center, 10px);
+}
+
+.title {
+  color: $four_color;
+  font-size: 28px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.boxBtn {
+  margin-top: 20px;
+  text-align: center;
+}
