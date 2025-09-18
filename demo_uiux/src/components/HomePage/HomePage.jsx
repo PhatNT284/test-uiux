@@ -10,13 +10,16 @@ function HomePage() {
 
   return (
     <>
-      <div>
-        <MyHeader />
-        <Banner />
-        <Info />
-        <AdvanceHeadling />
-        <HeadingListProducts />
-      </div>
+      <MyHeader />
+      <Banner />
+      <Info />
+      <AdvanceHeadling />
+      <HeadingListProducts />
+      <div
+        style={{
+          height: "200px",
+        }}
+      ></div>
     </>
   );
 }

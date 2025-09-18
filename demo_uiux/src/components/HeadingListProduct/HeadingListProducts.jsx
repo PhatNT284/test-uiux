@@ -2,20 +2,20 @@ import MainLayout from "@components/Layout/Layout";
 import CountdownTimer from "../CountdownTimer/CountdownTimer";
 import styles from "./styles.module.scss";
 import CountdownBanner from "@components/CountdownBanner/CountdownBanner";
+import ProductItem from "../ProductItem/ProductItem";
 
 function HeadingListProducts() {
   const { container, containerItem } = styles;
 
-  const targetDate = "2025-12-31T23:59:59"; // Set your target date here
+  const targetDate = "2025-12-31T23:59:59";
 
   return (
     <MainLayout>
-      {/* <CountdownTimer targetDate={targetDate} /> */}
       <div className={container}>
         <CountdownBanner />
         <div className={containerItem}>
-          <div>1</div>
-          <div>2</div>
+          <ProductItem />
+          <ProductItem />
         </div>
       </div>
     </MainLayout>
