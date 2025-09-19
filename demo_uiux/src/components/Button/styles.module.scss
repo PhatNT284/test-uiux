@@ -8,10 +8,37 @@
   font-size: 14px;
   font-weight: 400;
   cursor: pointer;
+
+  // &:hover {
+  //   background-color: transparent;
+  //   color: #e0e0e0;
+  //   border: 1px solid #e0e0e0;
+  //   transition: background-color 300ms;
+  // }
+
+  &:hover {
+    transition: background-color 300ms;
+  }
+}
+
+.primaryBtn {
+  background-color: $primary_color;
+  color: white;
+
   &:hover {
     background-color: transparent;
     color: #e0e0e0;
     border: 1px solid #e0e0e0;
-    transition: background-color 300ms;
+  }
+}
+
+.secondaryBtn {
+  background-color: white;
+  color: $primary_color;
+  border: 1px solid $primary_color;
+
+  &:hover {
+    background-color: $primary_color;
+    color: #e0e0e0;
   }
 }
