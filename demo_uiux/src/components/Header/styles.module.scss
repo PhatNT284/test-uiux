@@ -3,14 +3,26 @@
 
 .container {
   @include flex_box_custom(center, center, 0px);
-  position: absolute;
-  top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
   // background: rgba(255, 255, 255, 0.7); // nền trong suốt
   backdrop-filter: blur(10px); // hiệu ứng blur
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.topHeader {
+  position: absolute;
+}
+
+.fixedHeader {
+  position: fixed;
+  top: -87px;
+  backdrop-filter: blur(10px); // hiệu ứng blur
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  transform: translateY(87px);
+  transition: transform 0.7s ease;
 }
 
 .containerHeader {
