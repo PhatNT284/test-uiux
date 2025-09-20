@@ -3,8 +3,11 @@ import Menu from "./Menu/Menu";
 import { dataBoxIcon, dataMenu } from "./constant";
 import styles from "./styles.module.scss";
 import reloadIcon from "@icons/svgs/reloadIcon.svg";
+import { TfiReload } from "react-icons/tfi";
 import heartIcon from "@icons/svgs/heartIcon.svg";
+import { CiHeart } from "react-icons/ci";
 import cartIcon from "@icons/svgs/cartIcon.svg";
+import { PiShoppingCartThin } from "react-icons/pi";
 import useScrollHandling from "@/hooks/useScrollHandling";
 import { useContext, useEffect, useState } from "react";
 import classNames from "classnames";
@@ -23,9 +26,12 @@ function MyHeader() {
 
   const { scrollPosition } = useScrollHandling();
   const [fixedPosition, setFixedPosition] = useState(false);
+  const { setIsOpen, setType } = useContext(SideBarContext);
 
-  const { isOpen, setIsOpen } = useContext(SideBarContext);
-  console.log(isOpen);
+  const handleOpenSideBar = (type) => {
+    setIsOpen(true);
+    setType(type);
+  };
 
   useEffect(() => {
     // if (scrollPosition > 87) {
@@ -80,35 +86,28 @@ function MyHeader() {
                 key={item.content}
                 content={item.content}
                 href={item.href}
-                setIsOpen={setIsOpen}
               />
             ))}
           </div>
 
           <div className={containerBoxIcon}>
-            <img
-              width={26}
-              height={26}
-              src={reloadIcon}
-              alt="reload"
-              onClick={() => setIsOpen(true)}
-              style={{ cursor: "pointer" }}
+            <TfiReload
+              style={{
+                fontSize: "20px",
+              }}
+              onClick={() => handleOpenSideBar("compare")}
             />
-            <img
-              width={26}
-              height={26}
-              src={heartIcon}
-              alt="heart"
-              onClick={() => setIsOpen(true)}
-              style={{ cursor: "pointer" }}
+            <CiHeart
+              style={{
+                fontSize: "30px",
+              }}
+              onClick={() => handleOpenSideBar("wishlist")}
             />
-            <img
-              width={26}
-              height={26}
-              src={cartIcon}
-              alt="cart"
-              onClick={() => setIsOpen(true)}
-              style={{ cursor: "pointer" }}
+            <PiShoppingCartThin
+              style={{
+                fontSize: "25px",
+              }}
+              onClick={() => handleOpenSideBar("cart")}
             />
           </div>
         </div>
