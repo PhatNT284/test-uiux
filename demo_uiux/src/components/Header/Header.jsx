@@ -86,9 +86,30 @@ function MyHeader() {
           </div>
 
           <div className={containerBoxIcon}>
-            <img width={26} height={26} src={reloadIcon} alt="reload" />
-            <img width={26} height={26} src={heartIcon} alt="heart" />
-            <img width={26} height={26} src={cartIcon} alt="cart" />
+            <img
+              width={26}
+              height={26}
+              src={reloadIcon}
+              alt="reload"
+              onClick={() => setIsOpen(true)}
+              style={{ cursor: "pointer" }}
+            />
+            <img
+              width={26}
+              height={26}
+              src={heartIcon}
+              alt="heart"
+              onClick={() => setIsOpen(true)}
+              style={{ cursor: "pointer" }}
+            />
+            <img
+              width={26}
+              height={26}
+              src={cartIcon}
+              alt="cart"
+              onClick={() => setIsOpen(true)}
+              style={{ cursor: "pointer" }}
+            />
           </div>
         </div>
       </div>
