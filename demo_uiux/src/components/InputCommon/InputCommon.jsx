@@ -3,8 +3,10 @@ import styles from "./styles.module.scss";
 import { IoEyeOutline } from "react-icons/io5";
 import { FaRegEyeSlash } from "react-icons/fa6";
 
-function InputCommon({ label, type, isRequired = false }) {
-  const { container, labelInput, boxInput, boxIcon } = styles;
+function InputCommon({ label, type, isRequired = false, ...props }) {
+  const { formik, id } = props;
+
+  const { container, labelInput, boxInput, boxIcon, errMessage } = styles;
 
   const [showPassword, setShowPassword] = useState(false);
 
@@ -16,18 +18,29 @@ function InputCommon({ label, type, isRequired = false }) {
     setShowPassword(!showPassword);
   };
 
+  const isErr = formik.touched[id] && formik.errors[id];
+  const messageErr = formik.errors[id];
+
   return (
     <div className={container}>
       <div className={labelInput}>
         {label} {isRequired && <span>*</span>}
       </div>
       <div className={boxInput}>
-        <input type={isShowTextPassword} />
+        <input
+          type={isShowTextPassword}
+          {...props}
+          onBlur={formik.handleBlur}
+          onChange={formik.handleChange}
+          value={formik.values[id]}
+        />
         {isPassword && (
           <div className={boxIcon} onClick={handleShowPassword}>
             {showPassword ? <FaRegEyeSlash /> : <IoEyeOutline />}
           </div>
         )}
+
+        {isErr && <div className={errMessage}>{messageErr}</div>}
       </div>
     </div>
   );
